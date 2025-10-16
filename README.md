@@ -1,59 +1,76 @@
-# Shopsphere
+# ✨ ShopSphere
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.6.
+ShopSphere adalah aplikasi katalog e-commerce modern dan interaktif yang dibangun menggunakan Angular dan TypeScript. Proyek ini dikembangkan sebagai bagian dari penilaian teknis untuk posisi Web Developer, dengan fokus pada *best practices*, kode yang bersih, *state management* yang reaktif, dan desain UI/UX yang memukau.
 
-## Development server
+Aplikasi ini menampilkan desain **"Aurora Glassmorphism"** yang unik, dengan latar belakang gradien animasi dan elemen UI yang menyerupai panel kaca buram, menciptakan pengalaman pengguna yang premium dan imersif.
 
-To start a local development server, run:
+-----
+
+## 🌟 Fitur Utama
+
+  - **Katalog Produk Dinamis**: Menampilkan daftar produk yang diambil secara *real-time* dari [FakeStoreAPI](https://fakestoreapi.com/).
+  - **Pencarian Real-time**: *Header* dilengkapi dengan *search bar* yang memfilter produk secara langsung saat pengguna mengetik, menggunakan kekuatan RxJS.
+  - **Halaman Detail Produk**: Setiap produk dapat di-klik untuk melihat halaman detailnya sendiri, memanfaatkan sistem *routing* dinamis Angular (`/product/:id`).
+  - **Fungsionalitas Keranjang Belanja**: Sistem keranjang belanja *client-side* yang lengkap, memungkinkan pengguna untuk:
+      - Menambah produk ke keranjang.
+      - Melihat jumlah item di *header* secara *real-time*.
+      - Mengelola item di halaman keranjang (menambah/mengurangi kuantitas, menghapus item).
+  - **Desain Responsif**: Tampilan yang dioptimalkan untuk berbagai ukuran layar, dari *mobile* hingga desktop, termasuk *header* dengan *hamburger menu*.
+  - **UI/UX Modern**:
+      - **Animated Aurora Background**: Latar belakang gradien yang bergerak halus memberikan nuansa hidup.
+      - **Glassmorphism UI**: Kartu produk dan elemen lainnya didesain seperti panel kaca buram.
+      - **Efek Interaktif**: Efek *hover* yang memuaskan seperti *glow* dan animasi angkat pada kartu produk.
+      - **Loading & Empty States**: Pengalaman pengguna yang lebih baik dengan adanya indikator *loading* (spinner) dan pesan saat produk tidak ditemukan atau keranjang kosong.
+
+-----
+
+## 🛠️ Tech Stack & Tools
+
+  - **Framework**: Angular 20 (dengan arsitektur Standalone)
+  - **Bahasa**: TypeScript
+  - **Styling**: Tailwind CSS
+  - **State Management**: RxJS (BehaviorSubject, Observables) & Angular Services
+  - **HTTP Client**: `HttpClientModule` bawaan Angular
+  - **Routing**: `RouterModule` bawaan Angular
+  - **Deployment**: Vercel
+
+-----
+
+## 📦 Instalasi & Setup Lokal
+
+Untuk menjalankan proyek ini di komputermu, ikuti langkah-langkah berikut:
+
+#### 1\. Prasyarat
+
+Pastikan kamu sudah menginstall:
+
+  - [Node.js](https://nodejs.org/) (v18 atau lebih baru)
+  - npm (biasanya sudah termasuk dengan Node.js)
+  - [Angular CLI](https://angular.io/cli) (`npm install -g @angular/cli`)
+
+#### 2\. Clone Repositori
 
 ```bash
-ng serve
+git clone https://github.com/USERNAME_KAMU/shopsphere.git
+cd shopsphere
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+#### 3\. Install Dependencies
 
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+#### 4\. Jalankan Server Pengembangan
 
 ```bash
-ng generate --help
+ng serve -o
 ```
 
-## Building
+Aplikasi akan otomatis terbuka di `http://localhost:4200/`.
 
-To build the project run:
+-----
 
-```bash
-ng build
-```
+## 📜 Lisensi
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Proyek ini dilisensikan di bawah [MIT License](https://www.google.com/search?q=LICENSE).
