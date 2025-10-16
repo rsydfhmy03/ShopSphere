@@ -51,7 +51,7 @@ Pastikan kamu sudah menginstall:
 #### 2\. Clone Repositori
 
 ```bash
-git clone https://github.com/USERNAME_KAMU/shopsphere.git
+git clone https://github.com/rsydfhmy03/shopsphere.git
 cd shopsphere
 ```
 
