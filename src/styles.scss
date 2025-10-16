@@ -1,2 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
 @use "tailwindcss";
+@keyframes moveGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #111827; 
+  &::before {
+    content: '';
+    position: fixed; // Tetap di posisi meski di-scroll
+    inset: 0; // Memenuhi seluruh layar
+    z-index: -1; // Letakkan di belakang semua konten
+ 
+    background: radial-gradient(circle at 10% 20%, #06b6d4, transparent 40%),
+                radial-gradient(circle at 80% 90%, #14b8a6, transparent 40%),
+                radial-gradient(circle at 50% 50%, #1e3a8a, transparent 50%);
+    background-size: 300% 300%;
+    
+    animation: moveGradient 20s ease-in-out infinite;
+  }
+}

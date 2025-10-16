@@ -1,0 +1,64 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-slate-800/80 backdrop-blur-sm border-b border-slate-700">
+  <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <a routerLink="/" class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-500">
+        ShopSphere
+      </a>
+
+      <div class="hidden md:flex items-center gap-6">
+        <div class="relative">
+          <input 
+            type="text" 
+            placeholder="Search for products..."
+            class="bg-slate-700 text-slate-200 rounded-full py-2 pl-10 pr-4 w-64 focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all"
+            (input)="onSearch($event)">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+        </div>
+        <a routerLink="/cart" class="relative text-slate-400 hover:text-teal-400 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c.51 0 .962-.343 1.087-.835l1.823-6.831a.75.75 0 0 0-.54-1.022H5.617M7.5 14.25 5.106 5.165M7.5 14.25a2.25 2.25 0 0 1-4.5 0" />
+          </svg>
+          <span *ngIf="cartItemCount$ | async as count" 
+                class="absolute -top-2 -right-2 bg-cyan-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center">
+            {{ count }}
+          </span>
+        </a>
+      </div>
+
+      <div class="md:hidden">
+        <button (click)="toggleMenu()" class="text-slate-300 focus:outline-none">
+          <svg *ngIf="!isMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+          <svg *ngIf="isMenuOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div [ngClass]="{'max-h-screen py-4': isMenuOpen, 'max-h-0 py-0': !isMenuOpen}" class="md:hidden overflow-hidden transition-all duration-500 ease-in-out">
+      <div class="flex flex-col items-center gap-4">
+        <div class="relative w-full">
+          <input 
+            type="text" 
+            placeholder="Search for products..."
+            class="bg-slate-700 text-slate-200 rounded-full py-2 pl-10 pr-4 w-full focus:outline-none focus:ring-2 focus:ring-teal-500 transition-all"
+            (input)="onSearch($event)">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+          </svg>
+        </div>
+        <a routerLink="/cart" class="relative text-slate-400 hover:text-teal-400 transition">
+          <span class="font-semibold mr-2">My Cart</span>
+          <span *ngIf="cartItemCount$ | async as count" 
+                class="bg-cyan-500 text-white text-xs font-bold rounded-full h-5 w-5 inline-flex items-center justify-center">
+            {{ count }}
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

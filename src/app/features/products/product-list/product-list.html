@@ -1,0 +1,20 @@
+<div class="p-4 sm:p-8">
+  <h1 class="text-3xl sm:text-4xl font-bold text-slate-100 mb-8 text-center">
+    Explore Our Collection
+  </h1>
+
+  <app-spinner *ngIf="isLoading"></app-spinner>
+
+  <div *ngIf="products$ | async as products">
+    
+    <div *ngIf="!isLoading && products.length > 0" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+    </div>
+
+    <div *ngIf="!isLoading && products.length === 0" class="col-span-full text-center py-16">
+      <h3 class="text-2xl font-semibold text-slate-300">Oops! No Products Found</h3>
+      <p class="text-slate-500 mt-2">Try searching for something else.</p>
+    </div>
+
+  </div>
+</div>
