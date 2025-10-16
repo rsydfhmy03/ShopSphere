@@ -20,4 +20,8 @@ export class ApiService {
   setSearchTerm(term: string): void {
     this.searchSubject.next(term);
   }
+
+  getProductById(id: number): Observable<Product> {
+    return this.http.get<Product>(`${this.baseUrl}/products/${id}`);
+  }
 }
