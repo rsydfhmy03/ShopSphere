@@ -1,1 +1,9 @@
-<p>product-list works!</p>
+<div class="p-8 text-white">
+  <h1 class="text-3xl font-bold mb-6">Explore Our Products</h1>
+
+  <div class="grid grid-cols-4 gap-6">
+    <div *ngFor="let product of products" class="bg-gray-800 p-4 rounded-lg">
+      <p>{{ product.title }}</p>
+    </div>
+  </div>
+</div>
