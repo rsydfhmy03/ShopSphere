@@ -21,12 +21,15 @@
           <span class="text-base text-slate-400">Rating: {{ product.rating.rate }}/5 ({{ product.rating.count }} reviews)</span>
         </div>
 
-        <div class="mt-auto"> <p class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-500 mb-6">
+        <div class="mt-auto"> 
+          <p class="text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-cyan-500 mb-6">
             {{ product.price | currency:'USD' }}
           </p>
-          <button class="w-full text-center rounded-lg bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-bold py-4 hover:opacity-90 transition">
+        <button 
+            (click)="onAddToCart(product)"
+            class="w-full text-center rounded-lg bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-bold py-4 hover:opacity-90 transition">
             Add to Cart
-          </button>
+        </button>
         </div>
       </div>
     </div>
